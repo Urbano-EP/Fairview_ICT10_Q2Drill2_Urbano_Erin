@@ -1,21 +1,22 @@
 from pyscript import display, document
 
-def add_brand(e):
+def add_member(e):
     document.getElementById('output1').innerHTML =""
 
-    brands={'Uniqlo', 'Bench', 'Zara'}
+    members={'John', 'Jane', 'Doe'}
 
-    input_brand = document.getElementById('input1').value
+    input_member = document.getElementById('FirstName').value
+    input_member2 = document.getElementById('LastName').value
 
     #assign the value to set variable
-    new_brand_set = {input_brand} 
+    new_member_set = {input_member, input_member2} 
 
-    all_brands = brands | new_brand_set
+    all_members = members | new_member_set
 
-    total_brands = len(brands | new_brand_set)
+    total_members = len(members | new_member_set)
 
-    brand_list = "<br>".join(sorted(all_brands))
+    member_list = "<br>".join(sorted(all_members))
 
     #display
-    document.getElementById('output1').innerHTML = f'All brands: <br> {brand_list}'
-    display(f'Total brands: {total_brands}', target= "output1")
+    document.getElementById('output1').innerHTML = f'All members: <br> {member_list}'
+    display(f'Total members: {total_members}', target= "output1")
